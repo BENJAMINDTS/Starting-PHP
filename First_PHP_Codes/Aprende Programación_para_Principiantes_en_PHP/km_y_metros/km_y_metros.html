@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Distancia</title>
+</head>
+<body>
+    <h2>Conversor de kilómetros y metros</h2>
+
+    <form method="POST" action="km_y_metros.php">
+        <label for="valor">Introduce un valor:</label>
+        <input type="number" step="any" name="valor" id="valor" required>
+
+        <br><br>
+
+        <label for="tipo">Convertir a:</label>
+        <select name="tipo" id="tipo">
+            <option value="km_a_m">Kilómetros a metros</option>
+            <option value="m_a_km">Metros a kilómetros</option>
+        </select>
+
+        <br><br>
+
+        <input type="submit" value="Convertir">
+    </form>
+</body>
+</html>

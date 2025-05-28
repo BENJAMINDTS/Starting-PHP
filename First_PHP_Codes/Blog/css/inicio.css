@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  padding: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a,
+.auth-links a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.auth-links a {
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+}
+
+.post {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.post img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.post-content {
+  flex: 1;
+}
+
+.post h2 {
+  margin-top: 0;
+}
+
+.post p {
+  color: #666;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.anuncio {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #f4f4f4;
+  border: 2px solid #333;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.anuncio h3 {
+  margin-top: 0;
+}
+
+.anuncio a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #24292e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.anuncio a:hover {
+  background-color: #0366d6;
+}
+
+.cerrar-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #888;
+}
+
+.cerrar-btn:hover {
+  color: #000;
+}

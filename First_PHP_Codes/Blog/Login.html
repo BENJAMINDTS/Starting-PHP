@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="CSS/Registro.css">
+</head>
+
+<body>
+    <form method="POST" action="php/Login.php">
+        
+        <input type="text" name="dni" placeholder="DNI" required>
+        <input type ="text" name="contrasena" placeholder="Contraseña" required>
+        <input type="submit" value="Iniciar sesión">
+        <p>¿No tienes cuenta? <a href="Registro.html">Regístrate aquí</a></p>
+        <p><a href="inicio.php">← Volver al inicio</a></p>
+
+    </form>
+
+
+    <div id="cookie-banner"
+        style="position: fixed; bottom: 0; width: 100%; background: #222; color: white; padding: 15px; text-align: center; z-index: 1000;">
+        Este sitio utiliza cookies para mejorar tu experiencia.
+        <button onclick="aceptarCookies()" style="margin-left: 10px; padding: 5px 10px;">Aceptar</button>
+    </div>
+
+
+    <script>
+        function obtenerCookie(nombre) {
+            const valor = `; ${document.cookie}`;
+            const partes = valor.split(`; ${nombre}=`);
+            if (partes.length === 2) return partes.pop().split(';').shift();
+        }
+
+        function aceptarCookies() {
+            document.cookie = "cookies_aceptadas=true; max-age=" + 30 * 24 * 60 * 60 + "; path=/";
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+
+        window.onload = function () {
+            if (document.cookie.includes("cookies_aceptadas=true")) {
+                document.getElementById("cookie-banner").style.display = "none";
+            }
+
+            const nombreGuardado = obtenerCookie("usuario");
+            if (nombreGuardado) {
+                const campoUsuario = document.getElementById("usuario");
+                if (campoUsuario) {
+                    campoUsuario.value = decodeURIComponent(nombreGuardado);
+                }
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const campoUsuario = document.querySelector('input[name="usuario"]');
+
+            if (form && campoUsuario) {
+                form.addEventListener("submit", function () {
+                    const cookiesAceptadas = document.cookie.includes("cookies_aceptadas=true");
+                    const nombreUsuario = campoUsuario.value;
+
+                    if (cookiesAceptadas && nombreUsuario) {
+                        document.cookie = "usuario=" + encodeURIComponent(nombreUsuario) + "; max-age=" + 3600 + "; path=/";
+                    } else {
+                        document.cookie = "usuario=; max-age=0; path=/"; 
+                    }
+                });
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
